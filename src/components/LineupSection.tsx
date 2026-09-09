@@ -70,7 +70,7 @@ const LineupCard = ({ card }: { card: Card }) => {
                 'radial-gradient(circle at 50% 25%, rgba(255,21,76,0.55) 0%, rgba(26,10,36,1) 70%)',
             }}
           >
-            <Bat className="w-40 md:w-48 text-foreground/80 animate-float" />
+            <Bat className="w-40 md:w-48 text-foreground/80" />
           </div>
         )}
         <span

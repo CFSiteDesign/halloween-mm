@@ -13,10 +13,10 @@ type Item = {
 }
 
 const ITEMS: Item[] = [
-  { top: '9%', left: '5%', size: 'w-16 md:w-24', anim: 'animate-float', delay: '0s', rotate: '-14deg', opacity: 'opacity-30', kind: 'bat' },
-  { top: '17%', left: '85%', size: 'w-12 md:w-20', anim: 'animate-float-reverse', delay: '1.2s', rotate: '12deg', opacity: 'opacity-25', kind: 'bat-wide' },
-  { top: '61%', left: '3%', size: 'w-10 md:w-16', anim: 'animate-float-reverse', delay: '0.6s', rotate: '8deg', opacity: 'opacity-25', kind: 'bat-wide' },
-  { top: '74%', left: '88%', size: 'w-14 md:w-20', anim: 'animate-float', delay: '2s', rotate: '-9deg', opacity: 'opacity-30', kind: 'bat' },
+  { top: '9%', left: '5%', size: 'w-16 md:w-24', anim: '', delay: '0s', rotate: '-14deg', opacity: 'opacity-30', kind: 'bat' },
+  { top: '17%', left: '85%', size: 'w-12 md:w-20', anim: '', delay: '1.2s', rotate: '12deg', opacity: 'opacity-25', kind: 'bat-wide' },
+  { top: '61%', left: '3%', size: 'w-10 md:w-16', anim: '', delay: '0.6s', rotate: '8deg', opacity: 'opacity-25', kind: 'bat-wide' },
+  { top: '74%', left: '88%', size: 'w-14 md:w-20', anim: '', delay: '2s', rotate: '-9deg', opacity: 'opacity-30', kind: 'bat' },
   { top: '30%', left: '48%', size: 'w-5 md:w-8', anim: 'animate-twinkle', delay: '0.4s', rotate: '0deg', opacity: 'opacity-70', kind: 'sparkle' },
   { top: '12%', left: '34%', size: 'w-4 md:w-6', anim: 'animate-twinkle', delay: '1.6s', rotate: '0deg', opacity: 'opacity-60', kind: 'sparkle' },
   { top: '82%', left: '62%', size: 'w-4 md:w-7', anim: 'animate-twinkle', delay: '2.4s', rotate: '0deg', opacity: 'opacity-60', kind: 'sparkle' },
@@ -55,6 +55,7 @@ const FloatingSpooks = ({ webs = true, spider = false }: Props) => (
             left: item.left,
             animationDelay: item.delay,
             '--float-rotate': item.rotate,
+            transform: item.anim ? undefined : `rotate(${item.rotate})`,
           } as CSSProperties
         }
       >

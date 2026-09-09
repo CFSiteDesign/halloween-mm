@@ -1,25 +1,15 @@
-import { Bat, Sparkle } from '@/components/SpookyIcons'
+import { Sparkle } from '@/components/SpookyIcons'
 
 type Props = {
   /** background colour of the strip, so it blends with the sections either side */
   className?: string
 }
 
-/** A thin strip between sections with bats swooping across it. */
+/** A thin dashed strip between sections. */
 const SectionBreak = ({ className = '' }: Props) => (
   <div className={`relative h-16 md:h-24 overflow-hidden ${className}`} aria-hidden="true">
     <div className="absolute inset-0 flex items-center">
       <div className="w-full border-t-2 border-dashed border-foreground/15" />
-    </div>
-
-    <div className="absolute top-2 left-0 w-14 md:w-24 animate-swoop text-foreground/70">
-      <Bat className="w-full animate-flap" />
-    </div>
-    <div
-      className="absolute top-8 md:top-10 left-0 w-8 md:w-14 animate-swoop text-foreground/40"
-      style={{ animationDelay: '6s', animationDuration: '24s' }}
-    >
-      <Bat className="w-full animate-flap" style={{ animationDelay: '0.2s' }} />
     </div>
 
     <Sparkle className="absolute top-4 left-[22%] w-3 md:w-5 text-primary animate-twinkle" />

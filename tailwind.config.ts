@@ -93,15 +93,6 @@ export default {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0)" },
         },
-        flap: {
-          "0%, 100%": { transform: "scaleY(1) scaleX(1)" },
-          "50%": { transform: "scaleY(0.72) scaleX(1.06)" },
-        },
-        swoop: {
-          "0%": { transform: "translate(-12vw, 0) rotate(-6deg)", opacity: "0" },
-          "10%, 90%": { opacity: "0.9" },
-          "100%": { transform: "translate(112vw, -60px) rotate(6deg)", opacity: "0" },
-        },
         flicker: {
           "0%, 92%, 100%": { opacity: "1" },
           "93%": { opacity: "0.35" },
@@ -124,8 +115,6 @@ export default {
         "float-reverse": "float-reverse 7s ease-in-out infinite",
         marquee: "marquee 26s linear infinite",
         "marquee-reverse": "marquee-reverse 32s linear infinite",
-        flap: "flap 0.55s ease-in-out infinite",
-        swoop: "swoop 18s linear infinite",
         flicker: "flicker 5s linear infinite",
         twinkle: "twinkle 3.5s ease-in-out infinite",
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",

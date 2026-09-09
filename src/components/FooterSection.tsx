@@ -24,8 +24,8 @@ const FooterSection = () => {
             background: 'radial-gradient(ellipse 70% 70% at 50% 100%, rgba(255,21,76,0.25) 0%, transparent 65%)',
           }}
         />
-        <Bat className="absolute top-6 left-[12%] w-12 md:w-20 text-foreground/20 animate-float" aria-hidden="true" />
-        <Bat className="absolute top-10 right-[10%] w-10 md:w-16 text-foreground/20 animate-float-reverse" aria-hidden="true" />
+        <Bat className="absolute top-6 left-[12%] w-12 md:w-20 text-foreground/20" aria-hidden="true" />
+        <Bat className="absolute top-10 right-[10%] w-10 md:w-16 text-foreground/20" aria-hidden="true" />
 
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
           {wordmark && (
