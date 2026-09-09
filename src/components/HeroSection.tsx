@@ -18,9 +18,9 @@ const HeroSection = () => {
             'radial-gradient(ellipse 90% 60% at 50% 30%, rgba(255,21,76,0.22) 0%, transparent 62%), radial-gradient(ellipse 60% 50% at 80% 8%, rgba(181,123,255,0.16) 0%, transparent 60%)',
         }}
       />
-      <Moon className="absolute top-8 right-6 md:top-14 md:right-16 w-16 md:w-28 text-foreground/25 animate-flicker" />
+      <Moon className="absolute top-6 right-4 md:top-12 md:right-14 w-24 md:w-40 opacity-25 animate-flicker" style={{ filter: 'grayscale(1) brightness(0.95) sepia(0.5) hue-rotate(-28deg) saturate(2.2)' }} />
 
-      <FloatingSpooks />
+      <FloatingSpooks spider />
 
       <div className="relative z-10 w-full max-w-5xl flex flex-col items-center text-center">
         {madMonkeyLogo ? (

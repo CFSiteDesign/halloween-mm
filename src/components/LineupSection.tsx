@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { getAsset } from '@/lib/images'
 import FloatingSpooks from '@/components/FloatingSpooks'
-import { Bat, Skull, Ghost } from '@/components/SpookyIcons'
+import { Bat } from '@/components/SpookyIcons'
 
 type Card = {
   title: string
@@ -9,7 +9,6 @@ type Card = {
   description: string
   image?: string
   rotate: string
-  Icon: typeof Bat
 }
 
 const CARDS: Card[] = [
@@ -18,27 +17,24 @@ const CARDS: Card[] = [
     badge: 'Til the lights come up',
     description:
       'Resident DJs and guest sets running all night. Halloween anthems, dirty basslines and the odd Monster Mash, because you asked for it.',
-    image: getAsset('card-dj.jpg'),
+    image: getAsset('card-dj.webp'),
     rotate: '-rotate-2',
-    Icon: Skull,
   },
   {
     title: 'Drink Deals',
     badge: 'Cheap and nasty',
     description:
       'Blood-red buckets, two for one cocktails and shots that glow. Come in costume and the bar looks after you first.',
-    image: getAsset('card-drinks.jpg'),
+    image: getAsset('card-drinks.webp'),
     rotate: 'rotate-2',
-    Icon: Ghost,
   },
   {
     title: 'Pub Crawl',
     badge: 'Follow the screams',
     description:
       'The Mad Monkey crawl heads out into the dark. Bar to bar with the crew, a shot at every stop, and the kind of night nobody photographs well.',
-    image: getAsset('card-crawl.jpg'),
+    image: getAsset('card-crawl.webp'),
     rotate: '-rotate-1',
-    Icon: Bat,
   },
 ]
 
@@ -54,8 +50,6 @@ const LineupCard = ({ card }: { card: Card }) => {
     return () => io.disconnect()
   }, [])
 
-  const { Icon } = card
-
   return (
     <div ref={ref} className="bg-card bone-border blood-shadow-sm card-hover p-4 md:p-6 group">
       <div className="aspect-[4/3] bone-border mb-4 md:mb-6 overflow-hidden relative bg-muted">
@@ -63,8 +57,9 @@ const LineupCard = ({ card }: { card: Card }) => {
           <img
             src={card.image}
             alt={card.title}
-            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${
-              seen ? 'grayscale-0' : 'grayscale'
+            loading="lazy"
+            className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+              seen ? 'scale-100' : 'scale-105'
             }`}
           />
         ) : (
@@ -75,7 +70,7 @@ const LineupCard = ({ card }: { card: Card }) => {
                 'radial-gradient(circle at 50% 25%, rgba(255,21,76,0.55) 0%, rgba(26,10,36,1) 70%)',
             }}
           >
-            <Icon className={`text-foreground/80 animate-float ${card.title === "Pub Crawl" ? "w-40 md:w-52" : "w-20 md:w-24"}`} />
+            <Bat className="w-40 md:w-48 text-foreground/80 animate-float" />
           </div>
         )}
         <span

@@ -144,6 +144,31 @@
     text-shadow: 0 0 28px hsla(346, 100%, 54%, 0.55);
   }
 
+  /* inlined public-domain vector spooks: fill follows text colour */
+  .spook {
+    display: block;
+    line-height: 0;
+  }
+  .spook > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: currentColor;
+  }
+
+  /* sparkle is a bitmap masked so it can still take a colour */
+  .spook-mask {
+    display: block;
+    aspect-ratio: 1;
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

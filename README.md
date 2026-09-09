@@ -6,9 +6,11 @@ Landing page for the Halloween Party running at every Mad Monkey hostel on
 ## The page
 
 Hero → ticker → what is going down (3 cards) → how the night runs → hostel
-selector → FAQ → footer. Bats, cobwebs and sparkles are inline SVG components
-(`src/components/SpookyIcons.tsx`), so they cost nothing and scale cleanly.
-`SectionBreak` is the strip that flies bats between sections.
+selector → FAQ → footer. Bats, cobwebs, the spider and the sparkle are served
+through `src/components/SpookyIcons.tsx`: the vector ones are inlined so they
+inherit Tailwind text colour, the moon is a bitmap and the sparkle is a masked
+bitmap so it can still take a colour. `SectionBreak` is the strip that flies
+bats between sections.
 
 ## Artwork
 
@@ -16,8 +18,14 @@ selector → FAQ → footer. Bats, cobwebs and sparkles are inline SVG component
   the supplied poster (transparent background). Also in `public/halloween-party-wordmark.png`
   if you need the PNG for socials or print.
 - `src/assets/vamp-mouth.webp`: the winged vamp mouth, isolated.
-- Photography is not in yet. See `IMAGE_PROMPTS.md` for the prompts that match
-  the vibe, and where each file drops in.
+- `src/assets/card-dj.webp`, `card-drinks.webp`, `card-crawl.webp`: the three
+  lineup photos, halftone duotone to match the poster.
+- `public/og-halloween.jpg`: social share card, composed from the same artwork.
+- `src/assets/spooks/`: bats, cobweb and spider are real public-domain vector art
+  from freesvg.org (CC0), cleaned up and recoloured to `currentColor`; the moon is
+  a rasterised version of another. Sources are listed in `src/assets/spooks/CREDITS.md`.
+- `IMAGE_PROMPTS.md` has the prompts behind the photography, for matching the
+  look when new shots are needed.
 
 ## Turning the hostel links on
 

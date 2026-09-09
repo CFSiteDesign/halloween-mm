@@ -12,7 +12,13 @@ Every prompt below is written to be pasted straight into Midjourney, Higgsfield
 
 ---
 
-## 1. Live DJ card: `src/assets/card-dj.jpg` (4:3)
+> **Status:** the three card images and the social share image are done and live
+> in the repo. The prompts that made them are kept below so the look can be
+> matched when new shots are needed. Sections 5 and 6 are still open.
+
+---
+
+## 1. Live DJ card: `src/assets/card-dj.webp` (4:3) - DONE
 
 > Hard-flash photograph of a DJ mid-set in a packed hostel bar in Southeast Asia,
 > arms up on the mixer, sweat and smoke in the air, crowd hands and costume
@@ -22,7 +28,7 @@ Every prompt below is written to be pasted straight into Midjourney, Higgsfield
 > aesthetic, gritty, 90s rave flyer energy. Leave the top-left quarter simple and
 > dark for a label. No text, no logos, no watermarks, no clean studio lighting.
 
-## 2. Drink deals card: `src/assets/card-drinks.jpg` (4:3)
+## 2. Drink deals card: `src/assets/card-drinks.webp` (4:3) - DONE
 
 > Hard-flash photograph of a cluster of Halloween cocktails and a bucket on a wet
 > bar top: blood-red drinks, dry-ice mist creeping over the rim, a glowing shot
@@ -32,7 +38,7 @@ Every prompt below is written to be pasted straight into Midjourney, Higgsfield
 > zine texture. Leave the top-left quarter simple and dark for a label. No text,
 > no brand labels on bottles, no watermarks.
 
-## 3. Pub crawl card: `src/assets/card-crawl.jpg` (4:3)
+## 3. Pub crawl card: `src/assets/card-crawl.webp` (4:3) - DONE
 
 > Hard-flash night photograph from behind a crowd of costumed backpackers
 > spilling down a dark street between bars, motion blur on the edges, neon
@@ -42,7 +48,12 @@ Every prompt below is written to be pasted straight into Midjourney, Higgsfield
 > disposable-camera feel. Leave the top-left quarter simple and dark for a label.
 > No text, no readable signage, no watermarks.
 
-## 4. Social share image: `public/og-halloween.jpg` (1200x630)
+## 4. Social share image: `public/og-halloween.jpg` (1200x630) - DONE
+
+Composed from the artwork already in the repo rather than generated: the vamp
+mouth and wordmark over the blood spotlight, with bats, a corner web, the moon
+and a date tape. Rebuild it by editing the layout in a browser and exporting at
+1200x630, or regenerate from scratch with:
 
 > Poster-style layout on a deep near-black plum #0B0410 background with a soft
 > blood-pink #FF154C spotlight glow behind the centre. A halftone cut-out collage
@@ -50,9 +61,6 @@ Every prompt below is written to be pasted straight into Midjourney, Higgsfield
 > scattered bat silhouettes and four-point sparkles around it, generous empty
 > space in the lower half for headline type. Printed zine texture, coarse dot
 > screen, high contrast. No text, no logos, no watermarks.
-
-*(Then drop the wordmark from `public/halloween-party-wordmark.png` into the
-empty lower half and export at 1200x630.)*
 
 ## 5. Hero background plate (optional): `src/assets/hero-bg.jpg` (16:9)
 
