@@ -27,18 +27,22 @@ export const COUNTRIES: CountryFilter[] = [
 
 /**
  * ── TURNING THE LINKS ON ───────────────────────────────────────────────
- * Every card shows "COMING SOON" until LINKS_LIVE is true. Once the
- * Halloween event pages exist on madmonkeyhostels.com, flip this to true
- * and every card links to /tours-events/halloween-mad-monkey-<slug>.
- * If a single property needs a different URL, put it in OVERRIDES below.
+ * Every card shows "COMING SOON" until LINKS_LIVE is true. The event pages
+ * went live on madmonkeyhostels.com on 1 Oct 2026, so this is now true and
+ * every card links to /tours-events/halloween-party-mad-monkey-<slug>.
+ * Siargao uses a different slug, so it sits in OVERRIDES. Anything listed in
+ * NO_PAGE_YET has no event page at all and stays on "COMING SOON".
  */
-export const LINKS_LIVE = false
+export const LINKS_LIVE = true
 
-const EVENT_SLUG = 'halloween'
+const EVENT_SLUG = 'halloween-party'
 
 const OVERRIDES: Record<string, string> = {
-  // 'siargao': 'https://madmonkeyhostels.com/tours-events/some-other-url',
+  siargao: 'https://madmonkeyhostels.com/tours-events/halloween-event-mad-monkey-siargao',
 }
+
+/** Properties Charlie has not sent an event page for yet. */
+const NO_PAGE_YET = new Set(['kampot'])
 
 const RAW: Array<[id: string, name: string, country: CountryFilter, slug: string]> = [
   ['koh-rong', 'Koh Rong', 'Cambodia', 'koh-rong'],
@@ -49,7 +53,7 @@ const RAW: Array<[id: string, name: string, country: CountryFilter, slug: string
   ['gili-t', 'Gili T', 'Indonesia', 'gili-trawangan'],
   ['kuta-lombok', 'Kuta Lombok', 'Indonesia', 'kuta-lombok'],
   ['nusa-lembongan', 'Nusa Lembongan', 'Indonesia', 'nusa-lembongan'],
-  ['uluwatu', 'Uluwatu', 'Indonesia', 'uluwatu'],
+  ['uluwatu', 'Uluwatu', 'Indonesia', 'ulu-watu'],
   ['luang-prabang', 'Luang Prabang', 'Laos', 'luang-prabang'],
   ['vang-vieng', 'Vang Vieng', 'Laos', 'vang-vieng'],
   ['dumaguete', 'Dumaguete', 'Philippines', 'dumaguete'],
@@ -70,7 +74,8 @@ export const PROPERTIES: Property[] = RAW.map(([id, name, country, slug]) => ({
   id,
   name,
   country,
-  url: LINKS_LIVE
-    ? OVERRIDES[id] ?? `https://madmonkeyhostels.com/tours-events/${EVENT_SLUG}-mad-monkey-${slug}`
-    : '',
+  url:
+    LINKS_LIVE && !NO_PAGE_YET.has(id)
+      ? OVERRIDES[id] ?? `https://madmonkeyhostels.com/tours-events/${EVENT_SLUG}-mad-monkey-${slug}`
+      : '',
 }))
